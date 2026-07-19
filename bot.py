@@ -110,10 +110,18 @@ def analyze_token(token_address, net_config):
         if chain_id != 'solana':
             if holders_count < MIN_HOLDERS: return 
             
-            # --- TÍNH NĂNG MỚI: CHỐNG FAKE HOLDERS ---
-            # Nếu số ví Hold nhiều hơn số lệnh Mua 1.2 lần (Tức là thừa ra 20% lượng ví không do mua mà có) -> Loại bỏ
-            if holders_count > (dex_info['buys'] * 1.2):
-                return 
+            # --- CẬP NHẬT: KHIÊN CHỐNG FAKE HOLDERS (ÁP DỤNG MỌI MẠNG) ---
+        holders_count = int(data.get('holder_count', 0))
+        
+        # Kiểm tra tối thiểu ví theo cấu hình
+        if holders_count < MIN_HOLDERS: 
+            return 
+            
+        # So sánh số lượng ví với số lệnh Mua (Buys)
+        # Nếu số ví Hold nhiều hơn số lệnh Mua 1.2 lần -> Khả năng cao là ví ảo
+        if holders_count > (dex_info['buys'] * 1.2):
+            return
+        # -------------------------------------------------------------
 
         if data.get('is_honeypot', '0') == '1' or data.get('is_mintable', '0') == '1': return
         buy_tax = float(data.get('buy_tax', '0')) * 100 if data.get('buy_tax') else 0
