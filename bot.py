@@ -10,7 +10,7 @@ TELEGRAM_BOT_TOKEN = "8815874105:AAGg45aPCWiSo03fN4NQb5H9yZ_saqwkj_Q"
 TELEGRAM_CHAT_ID = "1848411087"
 
 # CẤU HÌNH TỐC ĐỘ & BỘ LỌC
-MAX_WORKERS = 15          # Số luồng quét đồng thời
+MAX_WORKERS = 20          # Số luồng quét đồng thời
 MAX_AGE_HOURS = 24        
 MIN_LIQUIDITY = 40000     
 MIN_VOLUME = 70000        
