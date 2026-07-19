@@ -12,8 +12,8 @@ TELEGRAM_CHAT_ID = "1848411087"
 # ================= 2. BỘ LỌC CHỈ SỐ VÀNG =================
 MAX_AGE_HOURS = 24        
 MIN_LIQUIDITY = 40000     
-MIN_VOLUME = 70000        
-MIN_TXNS = 700            
+MIN_VOLUME = 50000        
+MIN_TXNS = 500            
 MIN_HOLDERS = 400         
 MAX_PRICE = 0.00001       
 # =========================================================
