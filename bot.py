@@ -23,9 +23,13 @@ NETWORKS = {
     "bsc": {"name": "BSC (BNB)", "gecko": "bsc", "goplus": "56", "dex": "bsc"},
     "solana": {"name": "Solana", "gecko": "solana", "goplus": "solana", "dex": "solana"},
     "base": {"name": "Base", "gecko": "base", "goplus": "8453", "dex": "base"},
-    "polygon": {"name": "Polygon", "gecko": "polygon_pos", "goplus": "137", "dex": "polygon"}
+    "polygon": {"name": "Polygon", "gecko": "polygon_pos", "goplus": "137", "dex": "polygon"},
+    "sui": {"name": "Sui", "gecko": "sui", "goplus": "sui", "dex": "sui"},
+    "tron": {"name": "Tron", "gecko": "tron", "goplus": "tron", "dex": "tron"},
+    "ton": {"name": "TON", "gecko": "ton", "goplus": "ton", "dex": "ton"},
+    "arbitrum": {"name": "Arbitrum", "gecko": "arbitrum", "goplus": "42161", "dex": "arbitrum"}
 }
-checked_tokens = set()
+# =================================================================
 
 def send_telegram_msg(msg):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
