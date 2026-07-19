@@ -9,14 +9,15 @@ import os
 TELEGRAM_BOT_TOKEN = "8815874105:AAGg45aPCWiSo03fN4NQb5H9yZ_saqwkj_Q"
 TELEGRAM_CHAT_ID = "1848411087"
 
-# CẤU HÌNH TỐC ĐỘ & BỘ LỌC
-MAX_WORKERS = 20          # Số luồng quét đồng thời
-MAX_AGE_HOURS = 24        
-MIN_LIQUIDITY = 40000     
-MIN_VOLUME = 70000        
-MIN_TXNS = 700            
-MIN_HOLDERS = 400         
-MAX_PRICE = 0.00001       
+# ================= 1. CẤU HÌNH CÂN BẰNG (BALANCED STRATEGY) =================
+MAX_WORKERS = 20          # Giữ nguyên để quét nhanh mà không bị chặn IP
+MAX_AGE_HOURS = 18        # Tăng lên 18h: Bắt được các kèo mới trong ngày
+MIN_LIQUIDITY = 30000     # Hạ xuống 30k: Đủ an toàn nhưng vào sớm hơn trước
+MIN_VOLUME = 60000        # Hạ xuống 60k: Bắt được đà tăng trưởng của dòng tiền
+MIN_TXNS = 600            # Hạ xuống 500: Lọc bớt rác nhưng cho phép kèo mới
+MIN_HOLDERS = 300         # Hạ xuống 300: Đủ để thấy dự án có người quan tâm
+MAX_PRICE = 0.00003       # Mở rộng dải giá để đón được nhiều loại meme hơn
+# ===========================================================================   
 
 # SESSION ĐỂ TỐI ƯU TỐC ĐỘ API
 session = requests.Session()
